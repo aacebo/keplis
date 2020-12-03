@@ -1,4 +1,10 @@
 :host {
   display: flex;
   flex: 1;
+  justify-content: center;
+
+  form {
+    width: 80%;
+    max-width: 400px;
+  }
 }
