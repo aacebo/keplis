@@ -17,10 +17,20 @@ export class SignInPage implements OnInit {
 
   ngOnInit() {
     document.title = 'Sign In';
+    const username = localStorage.getItem('keplis:remember');
 
     this.form = this._fb.group({
-      username: this._fb.control(''),
-      password: this._fb.control(''),
+      username: this._fb.control(username),
+      password: this._fb.control(null),
+      remember: this._fb.control(!!username),
     });
+  }
+
+  submit() {
+    if (this.form.value.remember) {
+      localStorage.setItem('keplis:remember', this.form.value.username);
+    } else {
+      localStorage.removeItem('keplis:remember');
+    }
   }
 }

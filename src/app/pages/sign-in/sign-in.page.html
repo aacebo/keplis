@@ -1,24 +1,56 @@
-<form [formGroup]="form">
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
   <div class="form-group">
     <label for="username">Username</label>
-    <input class="form-control" id="username" placeholder="Username...">
+    <input
+      id="username"
+      class="form-control"
+      placeholder="Username..."
+      formControlName="username"
+    />
   </div>
 
-  <label for="password">Password</label>
-  <div class="input-group mb-3">
-    <input [type]="(visible$ | async) ? 'text' : 'password'" class="form-control" id="password" placeholder="Password...">
-    <div class="input-group-append">
-      <button
-        class="btn btn-outline-secondary"
-        (click)="visible$.next(!visible$.value)"
-      >
-        <kps-icon [name]="(visible$ | async) ? 'eye-off' : 'eye'"></kps-icon>
-      </button>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <div class="input-group">
+      <input
+        [type]="(visible$ | async) ? 'text' : 'password'"
+        id="password"
+        class="form-control"
+        placeholder="Password..."
+        formControlName="password"
+      />
+
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="visible$.next(!visible$.value)"
+        >
+          <kps-icon [name]="(visible$ | async) ? 'eye-off' : 'eye'"></kps-icon>
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="rememberMe">
-    <label class="form-check-label" for="rememberMe">Remember Me</label>
+  <div class="form-check mb-3">
+    <input
+      type="checkbox"
+      id="remember"
+      class="form-check-input"
+      formControlName="remember"
+    />
+
+    <label class="form-check-label" for="remember">Remember Me</label>
+  </div>
+
+  <div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+    >
+      Login
+    </button>
   </div>
 </form>
