@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthModule, NotAuthGuard } from './core/auth';
+
 const routes: Routes = [
   {
     path: '',
@@ -8,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'sign-in',
+    canActivate: [NotAuthGuard],
     loadChildren: () => import('./pages/sign-in/sign-in.module').then(m => m.SignInModule),
   },
   {
@@ -17,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), AuthModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

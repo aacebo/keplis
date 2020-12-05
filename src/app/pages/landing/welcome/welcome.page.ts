@@ -8,6 +8,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class WelcomePage implements OnInit {
   ngOnInit() {
-    document.title = 'Keplis: Welcome';
+    document.title = 'Welcome';
   }
 }
