@@ -16,14 +16,14 @@ export class IconComponent implements OnChanges {
   set height(v) {
     this._height = coerceNumberProperty(v);
   }
-  private _height = 24;
+  private _height = 20;
 
   @Input()
   get width() { return this._width; }
   set width(v) {
     this._width = coerceNumberProperty(v);
   }
-  private _width = 24;
+  private _width = 20;
 
   @Input()
   get strokeWidth() { return this._strokeWidth; }
@@ -36,6 +36,7 @@ export class IconComponent implements OnChanges {
 
   ngOnChanges() {
     this._el.nativeElement.innerHTML = feathericons.icons[this.name].toSvg({
+      style: 'margin-top: -3px;',
       width: this.width,
       height: this.height,
       'stroke-width': this.strokeWidth,

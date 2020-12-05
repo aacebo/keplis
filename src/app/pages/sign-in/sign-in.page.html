@@ -2,6 +2,14 @@
   [formGroup]="form"
   (ngSubmit)="submit()"
 >
+  <button
+    *ngIf="!production"
+    class="btn btn-outline-secondary w-100 mb-3"
+  >
+    <kps-icon class="mr-2" name="code"></kps-icon>
+    Development
+  </button>
+
   <div class="form-group">
     <label for="username">Username</label>
     <input

@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'kps-sign-in',
   templateUrl: './sign-in.page.html',
@@ -10,6 +12,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SignInPage implements OnInit {
   readonly visible$ = new BehaviorSubject(false);
+  readonly production = environment.production;
 
   form: FormGroup;
 
