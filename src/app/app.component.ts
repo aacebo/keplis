@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+import { UsersService } from './resources/users';
 
 @Component({
   selector: 'kps-root',
@@ -6,5 +8,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private readonly _users: UsersService) { }
+
+  ngOnInit() {
+    const token = localStorage.getItem('keplis:token');
+
+    if (token) {
+      this._users.token(token);
+    }
+  }
 }

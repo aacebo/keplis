@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
+import { UsersService } from '../../resources/users';
 
 @Component({
   selector: 'kps-sign-in',
@@ -16,24 +17,33 @@ export class SignInPage implements OnInit {
 
   form: FormGroup;
 
-  constructor(private readonly _fb: FormBuilder) { }
+  constructor(
+    private readonly _fb: FormBuilder,
+    private readonly _users: UsersService,
+  ) { }
 
   ngOnInit() {
     document.title = 'Sign In';
-    const username = localStorage.getItem('keplis:remember');
+    const email = localStorage.getItem('keplis:remember');
 
     this.form = this._fb.group({
-      username: this._fb.control(username),
+      email: this._fb.control(email),
       password: this._fb.control(null),
-      remember: this._fb.control(!!username),
+      remember: this._fb.control(!!email),
     });
   }
 
-  submit() {
+  devLogin() {
+    this._users.login('dev@dev.com');
+  }
+
+  login() {
     if (this.form.value.remember) {
-      localStorage.setItem('keplis:remember', this.form.value.username);
+      localStorage.setItem('keplis:remember', this.form.value.email);
     } else {
       localStorage.removeItem('keplis:remember');
     }
+
+    this._users.login(this.form.value.email);
   }
 }

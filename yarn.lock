@@ -1170,6 +1170,27 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ngrx/effects@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-10.1.0.tgz#14efeb684e1e4a005a40357812c1fdd3aabb8489"
+  integrity sha512-KQfEZAgTu317/xLc2WL/Qqf/DAEsBBCZNcMubSiuOZr7Sja/syW8tdOfm+jtAOYt4ORg8XX0W8aI54bxyliFDA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store-devtools@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-10.1.0.tgz#bb0b90efe1840e0d4142dbeb4f5338d36bf1fdee"
+  integrity sha512-XkKyN/GFom/LcH0EFUofXbJF+SUnWn7nglVfWpVqe8pe7RdYw8yQQBbjHxgcE4HBnlQnl2gY4uTeyeDicVPbvA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-10.1.0.tgz#379aa38543fffd3e41ca8622434a171fe70ed6f8"
+  integrity sha512-CBr9Jxd7Q4KYKNXuyhhd+AW2wzuScpH0aPdkbe7+PZOaUNTeBwGbrlmAr5L4FIJarmk4y0hZJH2o/gxRnp9mpQ==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@11.0.3":
   version "11.0.3"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-11.0.3.tgz#f031e8d2d5e2d145a759449a7dc67a0d13337c1b"
@@ -5131,6 +5152,11 @@ jszip@^3.1.3:
     pako "~1.0.2"
     readable-stream "~2.3.6"
     set-immediate-shim "~1.0.1"
+
+jwt-decode@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
+  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
 karma-chrome-launcher@~3.1.0:
   version "3.1.0"
