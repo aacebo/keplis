@@ -11,4 +11,17 @@
   </a>
 
   <div class="kps-spacer"></div>
+
+  <kps-search-input
+    class="mr-2"
+    [value]="search.value$ | async"
+    (valueChange)="onSearch($event)"
+  ></kps-search-input>
+
+  <kps-avatar
+    *ngIf="users.me$ | async; let me"
+    clickable
+    [src]="me.image"
+    [alt]="me.firstName.charAt(0) + me.lastName.charAt(0)"
+  ></kps-avatar>
 </nav>

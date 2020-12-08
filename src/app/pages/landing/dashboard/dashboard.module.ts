@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AvatarModule } from '../../../components/avatar';
+import { SearchInputModule } from '../../../components/search-input';
+
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardPage } from './dashboard.page';
 
@@ -8,7 +11,10 @@ import { DashboardPage } from './dashboard.page';
   declarations: [DashboardPage],
   imports: [
     CommonModule,
+
     DashboardRoutingModule,
+    AvatarModule,
+    SearchInputModule,
   ],
 })
 export class DashboardModule { }

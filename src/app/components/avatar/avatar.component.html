@@ -1,0 +1,15 @@
+<img
+  *ngIf="src"
+  draggable="false"
+  [style.display]="(error$ | async) ? 'none' : 'initial'"
+  [src]="src"
+  (load)="error$.next(false)"
+  (error)="error$.next(true)"
+/>
+
+<div
+  *ngIf="error$ | async"
+  class="kps-avatar--initials"
+>
+  {{ alt }}
+</div>
